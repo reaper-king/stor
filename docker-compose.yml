@@ -1,0 +1,19 @@
+
+version: '3.3'
+
+services:
+    print:
+        networks:
+            - dockernet
+        build: ./
+        ports:
+            - "3000"
+        environment:
+        - VITE_HOST=
+        - VITE_GOC=
+        - VITE_AHL_HOST=
+        - VITE_AHL=
+
+networks:
+    dockernet:
+        external: true
