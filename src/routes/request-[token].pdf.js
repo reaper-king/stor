@@ -1,7 +1,8 @@
 import https from "https";
 
+let host = import.meta.env.VITE_AHL_HOST
+let authAHL = import.meta.env.VITE_AHL
 import * as crypto  from "crypto";
-
 const httpsAgent = new https.Agent({
   rejectUnauthorized: false,
 });
@@ -9,12 +10,12 @@ let options = {
     method: 'GET',agent: httpsAgent,
     headers: {
       'Content-Type': 'application/json',
-      Authorization: 'Basic c3VwcG9ydDpjMHYxZDIwMjA='
+      Authorization: `Basic ${authAHL}`
     },
   };
 export async function get({params,url}){
 
-    const data = await fetch(`https://safemauritius.govmu.org/fhirservice/ServiceRequest?_revinclude=Task:based-on&identifier=${params.token}`,options)
+    const data = await fetch(`${host}/fhirservice/ServiceRequest?_revinclude=Task:based-on&identifier=${params.token}`,options)
     const tr = await data.json()
     if(data.ok){
         let pax = JSON.parse(tr.entry[1].resource.description)
@@ -35,7 +36,7 @@ export async function get({params,url}){
           Authorization: `${hash}`
         },
       };
-        const getFile = await fetch(`https://safemauritius.govmu.org/api/summary/${params.token}`,fileOptions)
+        const getFile = await fetch(`${host}/api/summary/${params.token}`,fileOptions)
         
         if(getFile.ok){       
                 return {

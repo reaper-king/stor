@@ -79,6 +79,9 @@ function handleClick() {
 		<th scope="col" class="px-6 py-3">
 		Arrival
 		</th>
+		<th scope="col" class="px-6 py-3">
+		Created
+		</th>
 		</tr>
 		</thead>
 		<tbody class=" font-medium text-gray-900  whitespace-nowrap ">
@@ -101,6 +104,9 @@ function handleClick() {
 		</td>
 		<td class="px-6 py-4">
 			 {passenger.date_of_arrival}
+		</td>
+		<td class="px-6 py-4">
+			 {passenger.created}
 		</td>
 		</tr>
 		
