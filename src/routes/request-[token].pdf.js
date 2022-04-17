@@ -36,9 +36,7 @@ export async function get({params,url}){
         },
       };
         const getFile = await fetch(`https://safemauritius.govmu.org/api/summary/${params.token}`,fileOptions)
-          
-            console.log(hash)
-            console.log(url.searchParams.get('token'))
+        
         if(getFile.ok){       
                 return {
                     status: await getFile.status,   headers: {        
