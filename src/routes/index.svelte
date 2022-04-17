@@ -91,7 +91,7 @@ function handleClick() {
 
 		<tr class="bg-white border-b ">
 		<th scope="row" class="px-6 py-4 font-medium text-gray-900  whitespace-nowrap">
-			<a  href={`/request-${passenger.qr}.pdf`} class="font-medium text-blue-600  hover:underline" download>Download</a>
+			<a  href={`/request-${passenger.qr}.pdf`} class="font-medium text-blue-600  hover:underline" target="_blank">Download</a>
 		</th>
 		<td class="px-6 py-4">
 			{passenger.passport_number}

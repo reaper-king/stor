@@ -41,9 +41,9 @@ export async function get({params,url}){
         if(getFile.ok){       
                 return {
                     status: await getFile.status,   headers: {        
-                      'content-type': 'text/Uint8Array'
+                      'content-type': 'text/Uint8Array,application/pdf'
                   },
-                    body: await getFile.blob()
+                    body: await getFile.arrayBuffer()
                 } }
 
     }
